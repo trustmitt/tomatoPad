@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TOMATO PAD</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Caveat&family=Chakra+Petch&family=Passion+One&family=Dancing+Script&family=Teko&family=Fuzzy+Bubbles&family=Oswald&family=Gugi&family=Hahmlet&family=Poppins&family=Open+Sans&family=Raleway&family=Nanum+Gothic&family=Work+Sans&family=Nanum+Myeongjo&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="shortcut icon" href="./favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+        <meta name="theme-color" content="#ffffff" />
+    </head>
+    <body>
+        <style data="test" type="text/css"></style>
+
+        <div class="container">
+            <div class="btns">
+                <div class="range">
+                    <input id="line-width" class="line-range" type="range" min="1" max="100" value="40" step="1" />
+                </div>
+                <button class="button" id="mode-pencil"><i class="bx bxs-pencil"></i></button>
+                <button class="button" id="eraser-btn"><i class="bx bxs-eraser"></i></button>
+                <button class="button" id="mode-circle"><i class="bx bx-shape-circle"></i></button>
+                <button class="button" id="mode-rectangle"><i class="bx bx-shape-square"></i></button>
+                <button class="button" id="mode-btn"><i class="bx bxs-paint-roll"></i></button>
+                <button class="button" id="destroy-btn"><i class="bx bx-reset"></i></button>
+                <label for="file">
+                    <i class="bx bxs-camera-plus"></i>
+                    <input type="file" accept="image/*" id="file" style="display: none" />
+                </label>
+                <button class="button" id="save"><i class="bx bxs-save"></i></button>
+                <fieldset>
+                    <div class="text-tool">
+                        <div class="range">
+                            <input id="font-size" class="font-range" type="range" min="1" max="100" value="40" />
+                        </div>
+                        <div class="select-box">
+                            <select id="font-type" autocomplete="off" required>
+                                <option value="nanum-gothic" style="font-family: Nanum Gothic">Nanum Gothic</option>
+                                <option value="nanum-myeongjo" style="font-family: Nanum Myeongjo">Nanum Myeongjo</option>
+                                <option value="caveat" style="font-family: Caveat">Caveat</option>
+                                <option value="chakra-petch" style="font-family: Chakra Petch">Chakra Petch</option>
+                                <option value="dancing-script" style="font-family: Dancing Script">Dancing Script</option>
+                                <option value="teko" style="font-family: Teko">Teko</option>
+                                <option value="raleway" style="font-family: Raleway">Raleway</option>
+                                <option value="gugi" style="font-family: Gugi">Gugi</option>
+                                <option value="poppins" style="font-family: Poppins">Poppins</option>
+                                <option value="passion-one" style="font-family: Passion One">Passion One</option>
+                                <option value="fuzzy-bubbles" style="font-family: Fuzzy Bubbles">Fuzzy Bubbles</option>
+                                <option value="open-Sans" style="font-family: Open Sans">Open Sans</option>
+                                <option value="oswald" style="font-family: Oswald">Oswald</option>
+                                <option value="work-Sans" style="font-family: Work Sans">Work Sans</option>
+                                <option value="hahmlet" style="font-family: Hahmlet">Hahmlet</option>
+                            </select>
+                        </div>
+                        <div class="select-box">
+                            <select id="font-weight">
+                                <option value="normal">Normal</option>
+                                <option value="bold">Bold</option>
+                            </select>
+                        </div>
+                        <div class="text-box">
+                            <input type="text" placeholder="Add text here... :)" id="text" />
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="no-idea">
+                <canvas></canvas>
+                <div class="color-options">
+                    <div class="color-option" style="background-color: #f44336" data-color="#F44336"></div>
+                    <div class="color-option" style="background-color: #ff5722" data-color="#FF5722"></div>
+                    <div class="color-option" style="background-color: #ffc107" data-color="#FFC107"></div>
+                    <div class="color-option" style="background-color: #fbc02d" data-color="#FBC02D"></div>
+                    <div class="color-option" style="background-color: #388e3c" data-color="#388E3C"></div>
+                    <div class="color-option" style="background-color: #388e3c" data-color="#388E3C"></div>
+                    <div class="color-option" style="background-color: #0288d1" data-color="#0288D1"></div>
+                    <div class="color-option" style="background-color: #303f9f" data-color="#303F9F"></div>
+                    <div class="color-option" style="background-color: #512da8" data-color="#512DA8"></div>
+                    <div class="color-option" style="background-color: #757575" data-color="#757575"></div>
+                    <label for="color" id="palette">
+                        <i class="bx bxs-palette"></i>more
+                        <input type="color" id="color" style="display: none" />
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <script src="./app.js"></script>
+        <script src="./slidebar.js"></script>
+    </body>
+</html>
