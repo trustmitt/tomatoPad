@@ -19,8 +19,11 @@ const ctx = canvas.getContext("2d");
 const CANVAS_WIDTH = 800;
 const CANVAS_HEIGHT = 800;
 
+const info = document.querySelector(".tooltiptext");
+const img = document.querySelector(".tomato-img");
+
 canvas.width = 800;
-canvas.height = 800;
+canvas.height = 540;
 ctx.lineWidth = lineWidth.value;
 ctx.lineCap = "round";
 let isPainting = false;
@@ -158,6 +161,7 @@ function onDoubleClick(event) {
 
     if (text !== "") {
         ctx.save();
+        modePencil = false;
         ctx.lineWidth = 1;
         ctx.font = `${textWeight} ${textSize}px ${textType}`;
         ctx.fillText(text, event.offsetX, event.offsetY);
@@ -172,6 +176,14 @@ function onSaveClick() {
     a.href = url;
     a.download = "myDrawing.png";
     a.click();
+}
+
+function onTomatoClick() {
+    info.innerText = "Draw anything!";
+    info.style.fontSize = "24px";
+    info.style.fontWeight = 600;
+    info.style.lineHeight = "1.4";
+    info.style.padding = "16px";
 }
 
 canvas.addEventListener("dblclick", onDoubleClick);
@@ -193,6 +205,8 @@ saveBtn.addEventListener("click", onSaveClick);
 pencil.addEventListener("click", handlePencil);
 circle.addEventListener("click", handleCircle);
 rectangle.addEventListener("click", handleRectangle);
+
+img.addEventListener("click", onTomatoClick);
 
 const lineRange = document.querySelector(".line-range");
 lineRange.addEventListener("input", function () {
