@@ -8,11 +8,6 @@
     ---leaf: #2c8b0c;
 }
 
-body,
-html {
-    cursor: url("./img/cursor.cur") 20 30, auto;
-}
-
 body {
     display: flex;
     gap: 20px;
@@ -30,7 +25,8 @@ body {
 
 canvas {
     width: 800px;
-    height: 800px;
+    height: 540px;
+    border-radius: 15px;
     background-color: white;
     margin-right: 16px;
 }
@@ -39,23 +35,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.info {
-    width: 78px;
-    height: 78px;
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
-    padding: 20px;
-    color: white;
-    border-radius: 100%;
-    text-align: center;
-    transition: top 0.01s linear;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
-    background-color: var(---tomato);
-    box-shadow: 0 0 0 1px var(---tomato) inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 rgba(255, 255, 255, 0.7), 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
-    border: none;
 }
 
 .btns {
@@ -134,8 +113,7 @@ div .font-range::-webkit-slider-thumb {
 }
 
 select {
-    margin-top: 12px;
-    margin-bottom: 7px;
+    margin-top: 8px;
     width: 184px;
     height: 50px;
     background-size: 20px;
@@ -161,6 +139,7 @@ select:hover {
 
 #text {
     margin-top: 12px;
+    margin-bottom: 12px;
     width: 176px;
     height: 50px;
     border: 0;
@@ -203,5 +182,72 @@ select:hover {
 }
 
 #palette:hover {
+    transform: scale(1.3);
+}
+
+.right-btns {
+    position: relative;
+    height: 600px;
+}
+
+.tomato-img {
+    position: absolute;
+    bottom: 16px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.tooltiptext {
+    /* visibility: hidden; */
+    width: 140px;
+    height: 70px;
+    background-color: var(---leaf);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    position: absolute;
+    z-index: 1;
+    transition: 0.2s;
+    opacity: 0.8;
+}
+
+.info:hover .tooltiptext {
+    /* visibility: visible; */
+    opacity: 1;
+}
+
+.info .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    border-style: solid;
+    border-width: 5px;
+}
+
+.info .tooltiptext::after {
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-color: var(---leaf) transparent transparent transparent;
+}
+
+.info .tooltiptext {
+    padding: 16px;
+    font-size: 16px;
+    bottom: 32%;
+    left: 32%;
+    margin-left: -60px;
+}
+
+.tooltiptext i {
+    margin-top: 12px;
+    font-size: 40px;
+    color: white;
+}
+
+.tooltiptext i:hover {
+    color: var(---black);
+    transition: 0.5s;
     transform: scale(1.3);
 }
