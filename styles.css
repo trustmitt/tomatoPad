@@ -10,17 +10,20 @@
 
 body {
     display: flex;
-    gap: 20px;
     justify-content: space-between;
     align-items: flex-start;
     background-color: var(---tomato);
-    padding: 40px;
-    min-width: 1020px;
+    width: 100vw;
+    height: 100vh;
 }
 
 .container {
+    width: 100%;
+    height: 100%;
     margin-top: 24px;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 canvas {
@@ -38,9 +41,9 @@ body {
 }
 
 .btns {
-    margin-right: 16px;
-    width: 200px;
-    height: 800px;
+    margin-right: 24px;
+    width: 180px;
+    height: 580px;
     display: inline-block;
 }
 
@@ -54,7 +57,7 @@ body {
     margin-top: 20px;
     margin-left: 8px;
     margin-right: 8px;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     border-radius: 100%;
     text-align: center;
     transition: top 0.01s linear;
@@ -65,8 +68,8 @@ body {
 }
 
 .btns button {
-    width: 78px;
-    height: 78px;
+    width: 70px;
+    height: 70px;
 }
 
 .btns button:hover,
@@ -82,7 +85,7 @@ body {
 
 button i,
 label i {
-    font-size: 38px;
+    font-size: 30px;
 }
 
 div .line-range,
@@ -179,6 +182,11 @@ select:hover {
     color: white;
     font-size: 16px;
     cursor: pointer;
+    transform: translate(-6px, -3px);
+}
+
+#palette i {
+    font-size: 40px;
 }
 
 #palette:hover {
